@@ -1,13 +1,14 @@
 <?php
-require_once BASE_PATH . '/../utils/envSetter.util.php'; // assumes $typeConfig is set
+require_once __DIR__ . '/../bootstrap.php';
+require_once UTILS_PATH . '/envSetter.util.php'; 
 
-function checkPostgreSQL() {
+function checkPostgreSQL(): void {
     global $typeConfig;
 
-    $host = $typeConfig['pgHost'];
-    $port = $typeConfig['pgPort'];
-    $dbname = $typeConfig['pgDb'];
-    $user = $typeConfig['pgUser'];
+    $host     = $typeConfig['pgHost'];
+    $port     = $typeConfig['pgPort'];
+    $dbname   = $typeConfig['pgDatabase'];
+    $user     = $typeConfig['pgUser'];
     $password = $typeConfig['pgPassword'];
 
     $conn_string = "host=$host port=$port dbname=$dbname user=$user password=$password";
@@ -20,3 +21,5 @@ function checkPostgreSQL() {
         pg_close($dbconn);
     }
 }
+
+checkPostgreSQL();  
