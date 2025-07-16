@@ -41,14 +41,14 @@ Change the following:
 
 ## 3. Modifying Docker: Update `compose.yml`
 Change the following:
-- [ ] Change all `web-app-php` to the name of your project. don't use upercase or whitespace.
+- [x] Change all `web-app-php` to the name of your project. don't use upercase or whitespace.
 > Using `ctrl` + `D`, each press in `D` will select another similar text and its not case sensetive.
-- [ ] Update Database names of : `MONGO_INITDB_DATABASE` & `POSTGRES_DB`
-- [ ] (Optional) Can Change External ports <External Port>:<Internal Port> ex.: "27017:27017" -> "23567:27017"
-- [ ] Run the docker if it works by using command `docker compose up` in cmd. just wait to complete the process.
+- [x] Update Database names of : `MONGO_INITDB_DATABASE` & `POSTGRES_DB`
+- [x] (Optional) Can Change External ports <External Port>:<Internal Port> ex.: "27017:27017" -> "23567:27017"
+- [x] Run the docker if it works by using command `docker compose up` in cmd. just wait to complete the process.
     - if you have docker desktop you will see there the name of your project and if you click it you will see 3 containers.
     - it should all be green
-- [ ] back in cmd if you saw a `w Enable Watch` press w while in the cmd to use it or use the following command on new cmd `docker compose watch`
+- [x] back in cmd if you saw a `w Enable Watch` press w while in the cmd to use it or use the following command on new cmd `docker compose watch`
 
 ## 4. Update the Checker
 - [ ] create new path

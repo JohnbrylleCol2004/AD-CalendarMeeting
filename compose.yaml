@@ -1,8 +1,8 @@
 services:
-  ad-calendarMeeting:
+  ad-calendarmeeting:
     build:
       context: .
-    container_name: ad-calendarMeeting
+    container_name: ad-calendarmeeting
     ports:
       - "8000:8000"
     develop:
@@ -25,7 +25,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: rootPassword
       MONGO_INITDB_DATABASE: ad-calendarmeeting
     ports:
-      - "27111:27017"
+      - "23567:27017"
     volumes:
       - ad-calendarmeeting-mongodb:/data/db/mongodb
 
@@ -38,7 +38,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: ad-calendarmeeting
     ports:
-      - "5112:5432"
+      - "5555:5432"
     volumes:
       - ad-calendarmeeting-postgresql:/data/db/postgresql
 
