@@ -13,8 +13,8 @@
 - host.docker.internal
 
 ## 1. Modifying Documentation: Update Readme
-- [ ] Check all the TODO Tasks and update according to relevance to the topic
-- [ ] Delete `TODO` mark when done modifying
+- [x] Check all the TODO Tasks and update according to relevance to the topic
+- [x] Delete `TODO` mark when done modifying
 
 ## 2. Modifying Composer: Update `composer.json`
 Change the following:
