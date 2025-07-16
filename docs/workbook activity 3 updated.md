@@ -143,11 +143,11 @@ Using `Database` a tool at the tool tab manage and view your database
 
 **Postgresql**
 - [x] Make Sure the Database is working. Go to Docker Desktop and make sure the `image` of `postgre` is green.
-- [ ] In `Database` click `Create Connection`
-- [ ] Select `PostgreSQL`
-- [ ] Setup connection: Port, Username, Password and Database
+- [x] In `Database` click `Create Connection`
+- [x] Select `PostgreSQL`
+- [x] Setup connection: Port, Username, Password and Database
 > can be view the data in `compose.yaml`
-- [ ] Click Connect and should show: `Connection Success!` then `Save`
+- [x] Click Connect and should show: `Connection Success!` then `Save`
 
 **Mongodb**
 - [ ] Make Sure the Database is working. Go to Docker Desktop and make sure the `image` of `mongodb` is green.
