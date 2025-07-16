@@ -1,18 +1,24 @@
 <?php
-require_once BASE_PATH . '/../utils/envSetter.util.php';
 
-$mongoUri = $typeConfig['mongoUri'];
-$mongoDb  = $typeConfig['mongoDb'];
+require_once __DIR__ . '/../bootstrap.php';
+require_once UTILS_PATH . '/envSetter.util.php';
 
-function checkMongoDB() {
+function checkMongoDB(): void {
+    global $typeConfig;
+
+    $mongoUri = $typeConfig['mongoUri'];
+    $mongoDb  = $typeConfig['mongoDb'];
+
     try {
-        $mongo = new MongoDB\Driver\Manager("mongodb://host.docker.internal:23567");
+        $mongo = new MongoDB\Driver\Manager($mongoUri);
 
         $command = new MongoDB\Driver\Command(["ping" => 1]);
-        $mongo->executeCommand("admin", $command);
+        $mongo->executeCommand($mongoDb, $command);
 
-        echo "✅ Connected to MongoDB successfully.  <br>";
+        echo "✅ Connected to MongoDB successfully. <br>";
     } catch (MongoDB\Driver\Exception\Exception $e) {
-        echo "❌ MongoDB connection failed: " . $e->getMessage() . "  <br>";
+        echo "❌ MongoDB connection failed: " . $e->getMessage() . "<br>";
     }
 }
+
+checkMongoDB();
