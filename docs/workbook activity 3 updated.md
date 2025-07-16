@@ -36,7 +36,7 @@ Change the following:
     }
 ],
 ```
-- [ ] after modifications use the command `composer install` in cmd to check if it works
+- [x] after modifications use the command `composer install` in cmd to check if it works
     - to verify if its correct it will show after the command green and no red another is to see if there is `vendor` folder in your files
 
 ## 3. Modifying Docker: Update `compose.yml`
