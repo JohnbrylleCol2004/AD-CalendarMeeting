@@ -93,8 +93,8 @@ composer require vlucas/phpdotenv
 
 ## 6. Modifying `.env`: Update `.env`
 Make sure important informations are hidden and tucked . as in testing of for the checker they should be changed from hard codded to env based
-- [ ] remove the `**/.env` in the `.dockerignore`
-    - [ ] rebuild the docker by `docker compose restart`
+- [x] remove the `**/.env` in the `.dockerignore`
+    - [x] rebuild the docker by `docker compose restart`
 - [ ] Fill all the following data
     - referencing from `postgreChecker.handler.php` and `mongodbChecker.handler.php`, hide important datas
 - [ ] Change the hard coded of checkers to env based
