@@ -89,7 +89,7 @@ sample:
 ```ps
 composer require vlucas/phpdotenv
 ```
-- [ ] install `vlucas/phpdotenv`
+- [x] install `vlucas/phpdotenv`
 
 ## 6. Modifying `.env`: Update `.env`
 Make sure important informations are hidden and tucked . as in testing of for the checker they should be changed from hard codded to env based
