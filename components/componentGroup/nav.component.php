@@ -1,10 +1,8 @@
-<?php session_start(); ?>
 <nav>
-  <a href="/index.php">Home</a>
-  <?php if (isset($_SESSION['user'])): ?>
-    | Logged in as <?= htmlspecialchars($_SESSION['user']['username']) ?>
-    | <a href="/logout.php">Logout</a>
+  <a href="/">Home</a>
+  <?php if (AuthUtil::check()): ?>
+    <a href="/handlers/logout.handler.php">Logout</a>
   <?php else: ?>
-    | <a href="/login.php">Login</a>
+    <a href="/pages/Login/index.php">Login</a>
   <?php endif; ?>
 </nav>

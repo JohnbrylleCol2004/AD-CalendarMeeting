@@ -2,15 +2,15 @@
 if (!defined('BASE_PATH')) {
     define('BASE_PATH', dirname(__DIR__));
 }
-session_start();
 
-include BASE_PATH . '/components/header.component.php';
-include BASE_PATH . '/components/nav.component.php';
-include BASE_PATH . '/components/flash.component.php';
+require_once BASE_PATH . '/utils/auth.util.php';
 
+if (session_status() === PHP_SESSION_NONE) session_start();
 
-if (isset($pageContent)) {
-    include $pageContent;
-}
+include BASE_PATH . '/components/componentGroup/header.component.php';
+include BASE_PATH . '/components/componentGroup/nav.component.php';
+include BASE_PATH . '/components/componentGroup/flash.component.php';
 
-include BASE_PATH . '/components/footer.component.php';
+echo $pageContent;
+
+include BASE_PATH . '/components/componentGroup/footer.component.php';

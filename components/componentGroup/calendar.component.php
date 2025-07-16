@@ -1,12 +1,5 @@
 <div id="calendar"></div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const calendarEl = document.getElementById('calendar');
-    const calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      events: '/api/getCalendarEvents.php', // hook up your backend
-    });
-    calendar.render();
-  });
-</script>
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+<script src="/assets/js/script.js"></script>
