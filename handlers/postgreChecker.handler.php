@@ -1,18 +1,22 @@
 <?php
-$host = "host.docker.internal"; 
-$port = "5555";
-$username = "user";
-$password = "password";
-$dbname = "ad-calendarmeeting";
+require_once __DIR__ . '/../utils/envSetter.util.php'; // assumes $typeConfig is set
 
-$conn_string = "host=$host port=$port dbname=$dbname user=$username password=$password";
+function checkPostgreSQL() {
+    global $typeConfig;
 
-$dbconn = pg_connect($conn_string);
+    $host = $typeConfig['pgHost'];
+    $port = $typeConfig['pgPort'];
+    $dbname = $typeConfig['pgDb'];
+    $user = $typeConfig['pgUser'];
+    $password = $typeConfig['pgPassword'];
 
-if (!$dbconn) {
-    echo "❌ Connection Failed: ", pg_last_error() . "  <br>";
-    exit();
-} else {
-    echo "✔️ PostgreSQL Connection  <br>";
-    pg_close($dbconn);
+    $conn_string = "host=$host port=$port dbname=$dbname user=$user password=$password";
+    $dbconn = pg_connect($conn_string);
+
+    if (!$dbconn) {
+        echo "❌ PostgreSQL Connection Failed: " . pg_last_error() . "<br>";
+    } else {
+        echo "✅ PostgreSQL Connection Successful<br>";
+        pg_close($dbconn);
+    }
 }
