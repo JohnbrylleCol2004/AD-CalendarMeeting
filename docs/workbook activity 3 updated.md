@@ -162,11 +162,11 @@ Using the GUI of database you need to formulate your data structure on how you w
 in this demo we need to have a design for our users
 Task: Users can be divided into group, they can login, basic information and role.
 
-- [ ] Design a structure
-- [ ] Create Base Pattern using the tool by simple selecting the database from `Database`
-    - [ ] Select your <database name> ex.: `mydatabase`
-    - [ ] Select `Tables` and look for the `+` sign then click it
-    - [ ] Create Sample code then copy
+- [x] Design a structure
+- [x] Create Base Pattern using the tool by simple selecting the database from `Database`
+    - [x] Select your <database name> ex.: `mydatabase`
+    - [x] Select `Tables` and look for the `+` sign then click it
+    - [x] Create Sample code then copy
 
     ```sql
     CREATE TABLE IF NOT EXISTS public."users" (
@@ -179,16 +179,16 @@ Task: Users can be divided into group, they can login, basic information and rol
         role varchar(225) NOT NULL
     );
     ```
-    - [ ] Goto your `Explorer`
-    - [ ] Create new file for that specific model ex.: `users.model.sql`
-    - [ ] Add conditional command on your SQL code
-        - [ ] between `CREATE TABLE` and `<table name>` add the following code `IF NOT EXISTS`
+    - [x] Goto your `Explorer`
+    - [x] Create new file for that specific model ex.: `users.model.sql`
+    - [x] Add conditional command on your SQL code
+        - [x] between `CREATE TABLE` and `<table name>` add the following code `IF NOT EXISTS`
 
 Task:
 Create more tables for the following
-- [ ] Projects
-- [ ] Project ↔ User assignments (project_user)
-- [ ] Tasks
+- [x] Projects
+- [x] Project ↔ User assignments (project_user)
+- [x] Tasks
 
 Just Copy the following for the `project_users.model.sql`
 ```sql
@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS project_users (
 );
 ```
 
-- [ ] for all id copy this: `id uuid NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),`
+- [x] for all id copy this: `id uuid NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),`
 
 ## 9. Automation: Creating Resetter
 Creating automation needs first a logic on what is the process and what should be expected output.
@@ -216,9 +216,9 @@ In this step we will design an automation that resets the database when needed a
     - Apply SQL Code
 - Output: Create the Table/s Ready for Use
 
-- [ ] Creating a new util code `dbResetPostgresql.util.php`
+- [x] Creating a new util code `dbResetPostgresql.util.php`
 
-- [ ] Setting up requirements
+- [x] Setting up requirements
 > Just copy this
 ```php
 declare(strict_types=1);
@@ -233,7 +233,7 @@ require_once 'bootstrap.php';
 require_once UTILS_PATH . '/envSetter.util.php';
 ```
 
-- [ ] Adding the database host and connecting
+- [x] Adding the database host and connecting
 ```php
 $host = $databases['pgHost'];
 $port = $databases['pgPort'];
@@ -248,7 +248,7 @@ $pdo = new PDO($dsn, $username, $password, [
 ]);
 ```
 
-- [ ] Using specific commands to use to automatically generate the database tables
+- [x] Using specific commands to use to automatically generate the database tables
 ```php
 // Just indicator it was working
 echo "Applying schema from database/users.model.sql…\n";
@@ -267,7 +267,7 @@ $pdo->exec($sql);
 ```
 > repeat this code times the number of tables
 
-- [ ] Make sure it clean the tables
+- [x] Make sure it clean the tables
 ```php
 echo "Truncating tables…\n";
 foreach (['users'] as $table) {
@@ -275,22 +275,22 @@ foreach (['users'] as $table) {
 }
 ```
 
-- [ ] Add the command in the `composer.json`
+- [x] Add the command in the `composer.json`
     - below `scripts` add a new library key set
     - `"postgresql:reset": "php utils/dbResetPostgresql.util.php"`
 
-- [ ] Test it if working
+- [x] Test it if working
     - in terminal use command `composer postgresql:reset`
     Partial Complete: ✅ PostgreSQL reset complete!
     Issue Arise from SQL Code: ❌ Could not read database/modelName.model.sql
 
-- [ ] visit GUI extension for database for checking and if each table exist congrats it works!!! 🎉
+- [x] visit GUI extension for database for checking and if each table exist congrats it works!!! 🎉
 
 ## 10. Adding Seeder: Creating Automation for viewing Data
 Seeding is terminology used refering to inputing data in database upon creation, making sure it is connected and can view data
 
-- [ ] duplicate the `dbResetPostgresql.util.php` and rename it `dbSeederPostgresql.util.php`
-- [ ] add the following logic for
+- [x] duplicate the `dbResetPostgresql.util.php` and rename it `dbSeederPostgresql.util.php`
+- [x] add the following logic for
 - Input: Database Code
 - Process: 
     - Check Database Connection
@@ -299,10 +299,10 @@ Seeding is terminology used refering to inputing data in database upon creation,
     - Add Seed Data(Dummy Data)
 - Output: Create the Table/s Ready for Use and can view data
 
-- [ ] before logic prepare the data a head
-    - [ ] create in `staticData/dummies` a file for the specific model
-    - [ ] (in this demo we will use the `users model` with `users dummies`) create file named `users.staticData.php`
-    - [ ] add simple dummy data using array of key arrays
+- [x] before logic prepare the data a head
+    - [x] create in `staticData/dummies` a file for the specific model
+    - [x] (in this demo we will use the `users model` with `users dummies`) create file named `users.staticData.php`
+    - [x] add simple dummy data using array of key arrays
 ```php
 <?php
 // the table of users are compose of following columns: id, username, first_name, last_name, password, role

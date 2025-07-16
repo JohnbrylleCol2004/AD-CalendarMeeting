@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '/../utils/envSetter.util.php';
+require_once BASE_PATH . '/../utils/envSetter.util.php';
+
+$mongoUri = $typeConfig['mongoUri'];
+$mongoDb  = $typeConfig['mongoDb'];
 
 function checkMongoDB() {
     try {
